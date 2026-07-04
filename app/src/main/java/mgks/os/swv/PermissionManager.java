@@ -55,6 +55,12 @@ public class PermissionManager {
         // Iterate through the permission groups defined in SWVContext config.
         for (String permissionGroup : SWVContext.ASWP_REQUIRED_PERMISSIONS) {
             switch (permissionGroup) {
+                case "CAMERA":
+                    if (!isCameraPermissionGranted()) {
+                        permissionsToRequest.add(Manifest.permission.CAMERA);
+                    }
+                    break;
+
                 case "LOCATION":
                     if (!isLocationPermissionGranted()) {
                         permissionsToRequest.add(Manifest.permission.ACCESS_FINE_LOCATION);
