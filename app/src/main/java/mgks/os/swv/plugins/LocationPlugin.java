@@ -222,6 +222,7 @@ public class LocationPlugin implements PluginInterface, LocationListener {
                         "      }" +
                         "    }" +
                         "  };" +
+                        "  window.Location = window.SWVLocation;" +
                         "  console.log('SWVLocation JS interface ready.');" +
                         "}";
         evaluateJavascript(js);
